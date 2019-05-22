@@ -1,0 +1,12 @@
+<header class="nav">
+  <div class="nav__container container">
+    <a class="nav__brand" href="/">{{ .Title }}</a>
+    <ul class="nav__list">
+      {{ range .Pages }}
+      <li class="nav__item">
+        <a class="nav__link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</header>

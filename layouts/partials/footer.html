@@ -1,0 +1,12 @@
+<footer class="footer">
+  <div class="footer__list">
+    {{ range .Site.Params.socialLinks }}
+      <div class="footer__item">
+        <a href="{{ .url }}" target="_blank" class="footer__link">
+          <img src="/icons/{{ .icon }}.svg" alt="{{ .icon }}" />
+        </a>
+      </div>
+    {{ end }}
+  </div>
+  <p class="footer__copyright">Ryan Haskell-Glatz, 2019</p>
+</footer>

@@ -1,0 +1,16 @@
+{{ define "head" }}
+  <title>{{ .Title }} | {{ .Site.Title }}</title>
+  <meta name="description" content="{{ .Params.description }}">
+{{ end }}
+
+{{ define "body" }}
+  {{ partial "hero" (dict "Title" .Title "Subtitle" .Params.description) }}
+  <section class="rich-text container ">
+    {{ .Content }}
+    {{ range .Pages }}
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <h5>{{ .Date.Format "January 2, 2006" }}</h5>
+      <h6>{{ .Params.description }}</h6>
+    {{ end }}
+  </section>
+{{ end }}

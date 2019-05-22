@@ -1,0 +1,12 @@
+{{ define "head" }}
+  <title>{{ .Title }} | {{ .Parent.Title }} | {{ .Site.Title }}</title>
+  <meta name="description" content="{{ .Params.description }}">
+{{ end }}
+
+{{ define "body" }}
+  {{ partial "hero" (dict "Title" .Title "Subtitle" .Params.description) }}
+  <section class="rich-text container">
+    <p style="color: #666;">Written on {{ .Date.Format "January 2, 2006" }}</p>
+    {{ .Content }}
+  </section>
+{{ end }}

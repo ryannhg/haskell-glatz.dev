@@ -1,0 +1,11 @@
+{{ define "head" }}
+  <title>{{ .Site.Title }}</title>
+  <meta name="description" content="{{ .Params.Description }}">
+{{ end }}
+
+{{ define "body" }}
+  {{ partial "hero" (dict "Title" "ryan." "Subtitle" "a boy with a website.") }}
+  <section class="rich-text container ">
+    {{ .Content }}
+  </section>
+{{ end }}
